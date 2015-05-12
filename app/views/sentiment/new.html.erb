@@ -1,2 +1,19 @@
-<h1>Sentiment#new</h1>
-<p>Find me in app/views/sentiment/new.html.erb</p>
+<h1>Company Sentiment Analysis via Facebook</h1>
+<p>Using data provided by DataSift find out how negative or positively a company is being perceived</p>
+<div>
+  <% if flash[:alert] %>
+      <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+  <%= form_tag do %>
+      <fieldset>
+        <legend>Submit the company name</legend>
+        <div>
+          <%= label_tag :company_name, 'Company Name: '%>
+          <%= text_field_tag :company_name, params[:company_name] %>
+        </div>
+        <div>
+          <%= submit_tag 'Submit' %>
+        </div>
+      </fieldset>
+  <% end %>
+</div>

@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'sentiment/new'
-
-  post 'sentiment/create'
-
-  get 'sentiment/show'
-
+  controller :sentiment do
+    get  'find_sentiment' => :new
+    post 'find_sentiment' => :show
+  end
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

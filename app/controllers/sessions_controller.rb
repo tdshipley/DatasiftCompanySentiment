@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to sentiment_new_path
+      redirect_to find_sentiment_path
     else
       redirect_to login_path, alert: 'Invalid username / password'
     end
